@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="95px" height="99px" viewBox="0 0 95 99" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>@</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <text id="text-1" font-family="Archia-SemiBold, Archia" font-size="100" font-weight="500" letter-spacing="1.66666667" fill="#2C2C2C">
+            <tspan x="438.566667" y="95">@</tspan>
+        </text>
+        <filter x="-7.7%" y="-9.6%" width="130.8%" height="125.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="8" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.988235294   0 0 0 0 0.639215686   0 0 0 0 0.0666666667  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="1">
+        <g id="card" transform="translate(-973.000000, -458.000000)" fill="#2C2C2C">
+            <g id="content" transform="translate(286.000000, 253.000000)">
+                <g id="icon" transform="translate(245.000000, 182.000000)">
+                    <g id="@">
+                        <use filter="url(#filter-2)" xlink:href="#text-1"></use>
+                        <use xlink:href="#text-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

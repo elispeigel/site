@@ -4,7 +4,35 @@
   box-sizing: border-box;
 }
 
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,700");
+@font-face {
+  font-family: "Archia Bold";
+  src: url(../public/fonts/archia-bold-webfont.ttf);
+}
+
+@font-face {
+  font-family: "Archia Light";
+  src: url(../public/fonts/archia-light-webfont.ttf);
+}
+
+@font-face {
+  font-family: "Archia Medium";
+  src: url(../public/fonts/archia-medium-webfont.ttf);
+}
+
+@font-face {
+  font-family: "Archia Regular";
+  src: url(../public/fonts/archia-regular-webfont.ttf);
+}
+
+@font-face {
+  font-family: "Archia Semibold";
+  src: url(../public/fonts/archia-semibold-webfont.ttf);
+}
+
+@font-face {
+  font-family: "Archia Thin";
+  src: url(../public/fonts/archia-thin-webfont.ttf);
+}
 
 html {
   font-size: 62.5%;
@@ -13,9 +41,10 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: #fafbfb;
+  background: #ffffff;
   font-family: "Roboto Slab", serif;
-  color: #303030;
+  color: #919191;
+  height: 100vh;
 }
 
 * {
