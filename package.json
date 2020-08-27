@@ -1,18 +1,15 @@
 {
+  "name": "app",
+  "version": "0.1.0",
   "private": true,
-  "workspaces": [
-    "api",
-    "web",
-    "packages/auth"
-  ],
-  "devDependencies": {
-    "@redwoodjs/core": "^0.8.2-canary.2"
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  "eslintConfig": {
-    "extends": "@redwoodjs/eslint-config"
-  },
-  "engines": {
-    "node": ">=12",
-    "yarn": ">=1.15"
+  "dependencies": {
+    "next": "9.5.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
   }
 }
