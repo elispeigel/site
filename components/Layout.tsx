@@ -1,7 +1,7 @@
 import React from 'react'
 
 import GlobalStyle from 'styles/GlobalStyles'
-import { theme, ITheme } from 'styles/theme'
+import { theme } from 'styles/theme'
 import Card from 'components/Card';
 
 

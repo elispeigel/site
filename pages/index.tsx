@@ -1,19 +1,17 @@
 import styled from 'styled-components'
+import Name from 'components/Name';
 
 const Style = styled.div`
+  height: 100%;
   display: grid;
-  grid-template-rows: 1fr;
-`;
+  grid-template-rows: 30% 20% 50%;
 
-const Text = styled.div`
-  font-family: 'Bold';
-  font-size: 60px;
 `;
 
 export default function Home() {
   return (
     <Style>
-      <Text>hello</Text>
+      <Name/>
     </Style>
   )
 }
