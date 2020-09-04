@@ -4,11 +4,11 @@ import styled from "styled-components";
 const CardStyle = styled.div`
   height: 70%;
   width: 70%;
-  background: ${({ theme }) => theme.white};
+  background: ${({ theme }) => theme.colors.white};
   border-radius: 50px;
   box-shadow:  ${({ theme }) => (
-    `20px 20px 60px ${theme.whiteShadow},
-    -20px -20px 60px ${theme.white};`
+    `20px 20px 60px ${theme.colors.whiteShadow},
+    -20px -20px 60px ${theme.colors.white};`
   )}
 `;
 
