@@ -17,7 +17,7 @@ const Container = styled.div`
 
 const Style = styled.div`
   font-family: 'Recoleta';
-  font-size: 20vh;
+  font-size: calc((10vh / 2) + (20vw / 2));
   color: ${({ theme }) => theme.colors.blue};
   margin: 0;
   padding-left: 4vw;
