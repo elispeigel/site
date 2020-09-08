@@ -1,24 +1,22 @@
 interface IColorsTheme {
-  white: string;
-  whiteShadow: string;
-  gray: string;
-  orange: string;
-  blue: string;
+  tan: string;
   black: string;
+  green: string;
+  blue: string;
+  brown: string;
 }
 const colorsTheme: IColorsTheme = {
-    white: '#FFFFFF',
-    whiteShadow: '#D9D9D9',
-    gray: '#E5E5E5',
-    orange: '#FCA311',
-    blue: '#14213D',
-    black: '#2C2C2C'
+    tan: '#DFCDAE',
+    black: '#2B2B30',
+    green: '#1E673C',
+    blue: '#2840AF',
+    brown: '#361B0B'
 }
-
 
 
 export interface ITheme {
-  colors: IColorsTheme
+  colors: IColorsTheme,
+  borderRadius: string,
 }
 
 export interface IThemeWrapper {
@@ -27,4 +25,5 @@ export interface IThemeWrapper {
 
 export const theme: ITheme = {
   colors: colorsTheme,
+  borderRadius: '30px',
 }

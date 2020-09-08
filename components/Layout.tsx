@@ -2,16 +2,12 @@ import React from 'react'
 
 import GlobalStyle from 'styles/GlobalStyles'
 import { theme } from 'styles/theme'
-import Card from 'components/Card';
+import { FunctionComponent } from 'react';
 
 
-const Layout = ({ children }: { children: any }) => (
+export default (({ children }: { children: any }) => (
   <>
     <GlobalStyle theme={theme}/>
-    <Card>
-      {children}
-    </Card>
+    {children}
   </>
-)
-
-export default Layout;
+)) as FunctionComponent

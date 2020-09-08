@@ -1,23 +1,34 @@
 import styled from "styled-components";
 import { FunctionComponent } from "react";
 
-const Style = styled.div`
-  font-family: 'Bold';
-  font-size: 7vw;
-  color: ${({ theme }) => theme.colors.black};
-  text-shadow: ${({ theme }) => `8px 4px 8px ${theme.colors.orange}`};
-  text-align: center;
-
+const Wrapper = styled.div`
+  height: 100%;
+  display: grid;
+  align-items: start;
+  justify-items: left;
 `;
 
-const Wrapper = styled.div`
+const Container = styled.div`
   display: grid;
   align-items: center;
-  justify-items: center;
+  justify-items: left;
+  grid-template-rows: 50% 50%;
 `;
+
+const Style = styled.div`
+  font-family: 'Recoleta';
+  font-size: 6rem;
+  color: ${({ theme }) => theme.colors.blue};
+  margin: 0;
+  padding-left: 20px;
+`;
+
 
 export default (() => (
   <Wrapper>
-    <Style>Eli Speigel</Style>
+    <Container>
+      <Style>Eli</Style>
+      <Style>Speigel</Style>
+    </Container>
   </Wrapper>
 )) as FunctionComponent;

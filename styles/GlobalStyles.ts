@@ -1,41 +1,23 @@
 import { createGlobalStyle } from "styled-components";
 import { ITheme } from "styles/theme";
 
-export default createGlobalStyle<{ theme: ITheme }>`
+export default createGlobalStyle<{ theme: ITheme}>`
 
   @font-face {
-    font-family: 'Bold';
-    src: url('/fonts/archia-bold-webfont.ttf');
+    font-family: 'Brandon';
+    src: url('/fonts/Brandon_med_it.otf');
     font-display: auto;
   }
 
   @font-face {
-    font-family: 'Light';
-    src: url('/fonts/archia-light-webfont.ttf');
+    font-family: 'Recoleta';
+    src: url('/fonts/Recoleta-Black.ttf');
+    font-display: auto;
   }
 
-  @font-face {
-    font-family: 'Medium';
-    src: url('/fonts/archia-medium-webfont.ttf');
-  }
-
-  @font-face {
-    font-family: 'Regular';
-    src: url('/fonts/archia-regular-webfont.ttf');
-  }
-
-  @font-face {
-    font-family: 'Semibold';
-    src: url('/fonts/archia-semibold-webfont.ttf');
-  }
-
-  @font-face {
-    font-family: 'Thin';
-    src: url('/fonts/archia-thin-webfont.ttf');
-  }
-
-
-  body {
-    background: ${({ theme }) => theme.colors.white};
+  html, body {
+    height: 100vh;
+    margin: 0;
+    background: ${({ theme }) => theme.colors.tan};
   }
 `;
