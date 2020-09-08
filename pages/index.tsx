@@ -7,7 +7,7 @@ const Style = styled.div`
   height: 100vh;
   background: ${({ theme }) => theme.colors.tan};
   display: grid;
-  grid-template-rows: 45% 55%;
+  grid-template-rows: 55% 45%;
 `;
 
 

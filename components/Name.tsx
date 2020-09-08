@@ -17,10 +17,10 @@ const Container = styled.div`
 
 const Style = styled.div`
   font-family: 'Recoleta';
-  font-size: 6rem;
+  font-size: 20vh;
   color: ${({ theme }) => theme.colors.blue};
   margin: 0;
-  padding-left: 20px;
+  padding-left: 4vw;
 `;
 
 

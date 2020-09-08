@@ -5,8 +5,9 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   height: 100%;
   display: grid;
-  align-items: end;
+  align-items: center;
   justify-items: right;
+  padding-right: 8vh;
 `;
 
 const Container = styled.div`
@@ -16,14 +17,13 @@ const Container = styled.div`
   border: .2rem solid ${({ theme }) => theme.colors.green};
   align-items: center;
   justify-items: center;
-  margin: 60px;
 `;
 
 const LinkWrapper = styled.div`
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 80px;
-  padding-right: 80px;
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
+  padding-left: 6vw;
+  padding-right: 6vw;
 `;
 
 const Link = styled.a`
@@ -39,10 +39,10 @@ const Menu: FunctionComponent = () => (
         <Link href='https://github.com/elispeigel'>github</Link>
       </LinkWrapper>
       <LinkWrapper>
-        <Link href='/resume.pdf' download>resume</Link>
+        <Link href='/resume.pdf'download>resume</Link>
       </LinkWrapper>
       <LinkWrapper>
-        <Link>contact</Link>
+        <Link href="mailto:eli.speigel@gmail.com">contact</Link>
       </LinkWrapper>
     </Container>
   </Wrapper>
