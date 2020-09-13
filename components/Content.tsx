@@ -16,7 +16,7 @@ const Container = styled.div`
   height: auto;
   width: auto;
   display: grid;
-  border: .4rem solid ${({ theme }: { theme: ITheme}) => theme.colors.green};
+  border: ${({ theme }: { theme: ITheme}) => `.25rem solid ${theme.colors.green}`};
   align-items: center;
   justify-items: center;
 `;
