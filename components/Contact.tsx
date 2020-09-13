@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 import { ContentType } from "pages";
 import Form from "components/Form";
-import ButtonBar from "components/ButtonBar";
 import { FunctionComponent } from "react";
 
 
