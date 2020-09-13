@@ -13,7 +13,7 @@ interface FieldProps {
 
 const Style = styled.div`
   display: grid;
-  grid-template-columns: max(7rem, calc(1.8 * 55px)) auto;
+  grid-template-columns: max(5vw, calc(1.8 * 55px)) auto;
   grid-column-gap: ${({ theme }: { theme: ITheme}) => theme.relationalSizes.horizontal.small};
   grid-template-rows: auto auto;
   height: max-content;
