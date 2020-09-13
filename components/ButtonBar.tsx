@@ -27,7 +27,7 @@ const Button = styled.button`
   font: inherit;
   cursor: pointer;
   outline: inherit;
-  font-size: ${({ theme }: { theme: ITheme}) => theme.fontSizes.large};
+  font-size: ${({ theme }: { theme: ITheme}) => theme.fontSizes.regular};
 
   :hover {
     color: ${({ theme }: { theme: ITheme}) => theme.colors.brown};

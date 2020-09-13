@@ -49,7 +49,7 @@ const Email = styled.input`
   background: ${({ theme }: { theme: ITheme}) => theme.colors.tan};
   color: ${({ theme }: { theme: ITheme}) => theme.colors.blue};
   border: none;
-  font: ${({ theme }: { theme: ITheme}) => theme.fontSizes.regular} 'Brandon';
+  font: ${({ theme }: { theme: ITheme}) => theme.fontSizes.smaller} 'Brandon';
   text-decoration: underline ${({ theme }: { theme: ITheme}) => theme.colors.green};
   padding: 0;
 
@@ -67,7 +67,7 @@ const Message = styled.textarea`
   color: ${({ theme }: { theme: ITheme}) => theme.colors.blue};
   text-decoration: underline ${({ theme }: { theme: ITheme}) => theme.colors.green};
   border: none;
-  font: ${({ theme }: { theme: ITheme}) => theme.fontSizes.regular} 'Brandon';
+  font: ${({ theme }: { theme: ITheme}) => theme.fontSizes.small} 'Brandon';
   resize: none;
   padding: 0;
 

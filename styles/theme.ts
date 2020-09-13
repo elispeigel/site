@@ -19,27 +19,30 @@ interface ISizes {
   xxsmall: string;
   xsmall: string;
   small: string;
+  smaller: string;
   regular: string;
   large: string;
   xlarge: string;
 }
 
 const sizeConstants: ISizes = {
-  xxsmall: '.375',
-  xsmall: '.75',
-  small: '1.5',
+  xxsmall: '.25',
+  xsmall: '.5',
+  small: '1',
+  smaller: '2',
   regular: '3',
   large: '6',
-  xlarge: '12',
+  xlarge: '9',
 }
 
 const fontSizesTheme: ISizes = {
-  xxsmall: 'clamp(2.5px, calc(.1875vh + .375vw), 5px)',
-  xsmall: 'clamp(5px, calc(.375vh + .75vw), 10px)',
-  small: 'clamp(10px, calc(.75vh + 1.5vw), 20px)',
-  regular: 'clamp(20px, calc(1.5vh + 3vw), 40px)',
-  large: 'clamp(40px, calc(3vh + 5vw), 80px)',
-  xlarge: 'clamp(80px, calc(6vh + 10vw), 160px)'
+  xxsmall: `clamp(3px, calc(${sizeConstants.xxsmall}vh + ${sizeConstants.xxsmall}vw), 6px)`,
+  xsmall: `clamp(6px, calc(${sizeConstants.xsmall}vh + ${sizeConstants.xsmall}vw), 12px)`,
+  small: `clamp(12px, calc(${sizeConstants.small}vh + ${sizeConstants.small}vw), 24px)`,
+  smaller: `clamp(18px, calc(${sizeConstants.smaller}vh + ${sizeConstants.smaller}vw), 36px)`,
+  regular: `clamp(24px, calc(${sizeConstants.regular}vh + ${sizeConstants.regular}vw), 48px)`,
+  large: `clamp(48px, calc(${sizeConstants.large}vh + ${sizeConstants.large}vw), 96px)`,
+  xlarge: `clamp(72px, calc(${sizeConstants.large}vh + ${sizeConstants.large}vw), 144px)`,
 }
 
 interface IRelationalSizesTheme {
@@ -53,6 +56,7 @@ const relationalSizesTheme: IRelationalSizesTheme = {
     xxsmall: `${sizeConstants.xxsmall}vh`,
     xsmall: `${sizeConstants.xsmall}vh`,
     small: `${sizeConstants.small}vh`,
+    smaller: `${sizeConstants.smaller}vh`,
     regular: `${sizeConstants.regular}vh`,
     large: `${sizeConstants.large}vh`,
     xlarge: `${sizeConstants.xlarge}vh`
@@ -61,6 +65,7 @@ const relationalSizesTheme: IRelationalSizesTheme = {
     xxsmall: `${sizeConstants.xxsmall}vw`,
     xsmall: `${sizeConstants.xsmall}vw`,
     small: `${sizeConstants.small}vw`,
+    smaller: `${sizeConstants.smaller}vh`,
     regular: `${sizeConstants.regular}vw`,
     large: `${sizeConstants.large}vw`,
     xlarge: `${sizeConstants.xlarge}vw`
