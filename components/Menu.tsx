@@ -1,51 +1,39 @@
-
 import { FunctionComponent } from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
-  height: 100%;
-  display: grid;
-  align-items: center;
-  justify-items: right;
-  padding-right: 8vh;
-`;
+import { ContentType } from 'pages';
+import { ITheme } from 'styles/theme';
 
-const Container = styled.div`
-  height: auto;
-  width: auto;
-  display: grid;
-  border: .2rem solid ${({ theme }) => theme.colors.green};
-  align-items: center;
-  justify-items: center;
-`;
+interface MenuProps {
+  onContentChange: (newValue: ContentType) => void;
+}
 
 const LinkWrapper = styled.div`
-  padding-top: 1.5vh;
-  padding-bottom: 1.5vh;
-  padding-left: 6vw;
-  padding-right: 6vw;
+  padding-top: ${({ theme }: { theme: ITheme}) => theme.relationalSizes.vertical.small};
+  padding-bottom: ${({ theme }: { theme: ITheme}) => theme.relationalSizes.vertical.small};
+  padding-left: ${({ theme }: { theme: ITheme}) => theme.relationalSizes.horizontal.large};
+  padding-right: ${({ theme }: { theme: ITheme}) => theme.relationalSizes.horizontal.large};
 `;
 
 const Link = styled.a`
-  color: ${({ theme }) => theme.colors.brown};
-  font: 1.8rem 'Brandon';
+  color: ${({ theme }: { theme: ITheme}) => theme.colors.blue};
+  font: ${({ theme }: { theme: ITheme}) => theme.fontSizes.regular} 'Brandon';
   text-decoration: none;
+  cursor: pointer;
 `;
 
-const Menu: FunctionComponent = () => (
-  <Wrapper>
-    <Container>
+const Menu: FunctionComponent<MenuProps> = ({ onContentChange }) => (
+  <>
       <LinkWrapper>
         <Link href='https://github.com/elispeigel'>github</Link>
       </LinkWrapper>
       <LinkWrapper>
-        <Link href='/resume.pdf'download>resume</Link>
+        <Link href='/resume.pdf' download>resume</Link>
       </LinkWrapper>
       <LinkWrapper>
-        <Link href="mailto:eli.speigel@gmail.com">contact</Link>
+        <Link onClick={() => onContentChange(ContentType.CONTACT)}>contact</Link>
       </LinkWrapper>
-    </Container>
-  </Wrapper>
+  </>
 )
 
 export default Menu;

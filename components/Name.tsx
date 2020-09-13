@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import { FunctionComponent } from "react";
 
+import { ITheme } from 'styles/theme'
+
 const Wrapper = styled.div`
-  height: 100%;
+  height: max-content;
   display: grid;
   align-items: start;
   justify-items: left;
@@ -16,11 +18,10 @@ const Container = styled.div`
 `;
 
 const Style = styled.div`
-  font-family: 'Recoleta';
-  font-size: calc((10vh / 2) + (20vw / 2));
-  color: ${({ theme }) => theme.colors.blue};
+  font: ${({ theme }: { theme: ITheme}) => theme.fontSizes.xlarge} 'Recoleta';
+  color: ${({ theme }: { theme: ITheme}) => theme.colors.blue};
   margin: 0;
-  padding-left: 4vw;
+  padding-left: ${({ theme }: { theme: ITheme}) => theme.relationalSizes.horizontal.regular};
 `;
 
 
