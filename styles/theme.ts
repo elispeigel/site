@@ -16,6 +16,8 @@ const colorsTheme: IColorsTheme = {
 }
 
 interface ISizes {
+  xxsmall: string;
+  xsmall: string;
   small: string;
   regular: string;
   large: string;
@@ -23,6 +25,8 @@ interface ISizes {
 }
 
 const sizeConstants: ISizes = {
+  xxsmall: '.375',
+  xsmall: '.75',
   small: '1.5',
   regular: '3',
   large: '6',
@@ -30,6 +34,8 @@ const sizeConstants: ISizes = {
 }
 
 const fontSizesTheme: ISizes = {
+  xxsmall: 'clamp(2.5px, calc(.1875vh + .375vw), 5px)',
+  xsmall: 'clamp(5px, calc(.375vh + .75vw), 10px)',
   small: 'clamp(10px, calc(.75vh + 1.5vw), 20px)',
   regular: 'clamp(20px, calc(1.5vh + 3vw), 40px)',
   large: 'clamp(40px, calc(3vh + 5vw), 80px)',
@@ -44,12 +50,16 @@ interface IRelationalSizesTheme {
 
 const relationalSizesTheme: IRelationalSizesTheme = {
   vertical: {
+    xxsmall: `${sizeConstants.xxsmall}vh`,
+    xsmall: `${sizeConstants.xsmall}vh`,
     small: `${sizeConstants.small}vh`,
     regular: `${sizeConstants.regular}vh`,
     large: `${sizeConstants.large}vh`,
     xlarge: `${sizeConstants.xlarge}vh`
   },
   horizontal: {
+    xxsmall: `${sizeConstants.xxsmall}vw`,
+    xsmall: `${sizeConstants.xsmall}vw`,
     small: `${sizeConstants.small}vw`,
     regular: `${sizeConstants.regular}vw`,
     large: `${sizeConstants.large}vw`,
