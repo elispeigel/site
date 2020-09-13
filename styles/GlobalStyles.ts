@@ -18,6 +18,6 @@ export default createGlobalStyle<{ theme: ITheme}>`
   html, body {
     height: 100vh;
     margin: 0;
-    background: ${({ theme }) => theme.colors.tan};
+    background: ${({ theme }: { theme: ITheme}) => theme.colors.tan};
   }
 `;
