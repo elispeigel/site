@@ -1,13 +1,12 @@
-import { FunctionComponent } from "react";
+import React, { FunctionComponent } from "react";
 import styled from "styled-components";
 
-import { ContentType } from "pages";
 import { ITheme } from "styles/theme";
+import NavLink from 'components/NavLink'
 
 interface ButtonBarProps {
   symbol: string;
   buttonType: "button" | "submit" | "reset";
-  onContentChange?: (newValue: ContentType) => void;
 }
 
 interface StyleProps {
@@ -27,7 +26,23 @@ const Button = styled.button`
   font: inherit;
   cursor: pointer;
   outline: inherit;
-  font-size: ${({ theme }: { theme: ITheme}) => theme.fontSizes.large};
+  font-size: ${({ theme }: { theme: ITheme}) => theme.fontSizes.regular};
+
+  :hover {
+    color: ${({ theme }: { theme: ITheme}) => theme.colors.brown};
+  }
+`;
+
+const Link = styled.a`
+  text-decoration: none;
+  color: ${({ theme }: { theme: ITheme}) => theme.colors.blue};
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  font-size: ${({ theme }: { theme: ITheme}) => theme.fontSizes.regular};
 
   :hover {
     color: ${({ theme }: { theme: ITheme}) => theme.colors.brown};
@@ -36,28 +51,23 @@ const Button = styled.button`
 
 const isSubmit = (buttonType: string) => buttonType === 'submit';
 
-const ButtonBar: FunctionComponent<ButtonBarProps> = ({ symbol, onContentChange, buttonType }) => (
+const ButtonBar: FunctionComponent<ButtonBarProps> = ({ symbol, buttonType }) => (
   <Style isSubmit={isSubmit(buttonType)}>
     {
       isSubmit(buttonType) ?
       (
-        <Button
-          type={buttonType}
-        >
+        <Button type={buttonType}>
           {symbol}
         </Button>
       ) :
       (
-        <Button
-          onClick={() => onContentChange(ContentType.MENU)}
-          type={buttonType}
-        >
-          {symbol}
-        </Button>
+        <NavLink href='/'>
+          <Link>
+            {symbol}
+          </Link>
+        </NavLink>
       )
-
     }
-
   </Style>
 );
 

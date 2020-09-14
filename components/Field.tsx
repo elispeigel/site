@@ -13,17 +13,17 @@ interface FieldProps {
 
 const Style = styled.div`
   display: grid;
-  grid-template-columns: max(7rem, calc(1.8 * 55px)) auto;
+  grid-template-columns: ${({ theme }: { theme: ITheme}) => `max(${theme.relationalSizes.horizontal.regular}, calc(${theme.relationalSizes.regular.smaller} * 55px)) auto`};
   grid-column-gap: ${({ theme }: { theme: ITheme}) => theme.relationalSizes.horizontal.small};
   grid-template-rows: auto auto;
   height: max-content;
   padding: 10px;
-  align-items: start;
+  align-items: start; 
 `;
 
 const Label = styled.label`
   color: ${({ theme }: { theme: ITheme}) => theme.colors.brown};
-  font: ${({ theme }: { theme: ITheme}) => theme.fontSizes.regular} 'Brandon';
+  font: ${({ theme }: { theme: ITheme}) => theme.fontSizes.smaller} 'Brandon';
   justify-self: right;
 `;
 
