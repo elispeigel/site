@@ -1,12 +1,10 @@
 import { FunctionComponent } from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 
-import { ContentType } from 'pages';
 import { ITheme } from 'styles/theme';
+import NavLink from './NavLink';
 
-interface MenuProps {
-  onContentChange: (newValue: ContentType) => void;
-}
 
 const LinkWrapper = styled.div`
   padding-top: ${({ theme }: { theme: ITheme}) => theme.relationalSizes.vertical.small};
@@ -15,23 +13,25 @@ const LinkWrapper = styled.div`
   padding-right: ${({ theme }: { theme: ITheme}) => theme.relationalSizes.horizontal.large};
 `;
 
-const Link = styled.a`
+const Style = styled.a`
   color: ${({ theme }: { theme: ITheme}) => theme.colors.blue};
   font: ${({ theme }: { theme: ITheme}) => theme.fontSizes.regular} 'Brandon';
   text-decoration: none;
   cursor: pointer;
 `;
 
-const Menu: FunctionComponent<MenuProps> = ({ onContentChange }) => (
+const Menu: FunctionComponent = () => (
   <>
       <LinkWrapper>
-        <Link href='https://github.com/elispeigel'>github</Link>
+        <Style href='https://github.com/elispeigel'>github</Style>
       </LinkWrapper>
       <LinkWrapper>
-        <Link href='/resume.pdf' download>resume</Link>
+        <Style href='/resume.pdf' download>resume</Style>
       </LinkWrapper>
       <LinkWrapper>
-        <Link onClick={() => onContentChange(ContentType.CONTACT)}>contact</Link>
+        <NavLink href='/contact'>
+          <Style>contact</Style>
+        </NavLink>
       </LinkWrapper>
   </>
 )

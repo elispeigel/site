@@ -2,10 +2,10 @@
 import { FunctionComponent } from 'react';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
+import axios from "axios"
 
 import Field from 'components/Field';
 import ButtonBar from './ButtonBar';
-import { ContentType } from 'pages';
 import { ITheme } from 'styles/theme';
 
 interface IInputs {
@@ -13,9 +13,6 @@ interface IInputs {
   body: string;
 }
 
-interface FormProps {
-  onContentChange: (newValue: ContentType) => void;
-}
 
 const Style = styled.form`
   height: max-content;
@@ -67,23 +64,50 @@ const Message = styled.textarea`
   color: ${({ theme }: { theme: ITheme}) => theme.colors.blue};
   text-decoration: underline ${({ theme }: { theme: ITheme}) => theme.colors.green};
   border: none;
-  font: ${({ theme }: { theme: ITheme}) => theme.fontSizes.small} 'Brandon';
+  font: ${({ theme }: { theme: ITheme}) => theme.fontSizes.smaller} 'Brandon';
   resize: none;
   padding: 0;
 
   :focus {
    outline: none;
-  }`;
+  }
+`;
+
+export const sendContactMail = async (data) => {
+
+    try {
+        const res = await axios({
+            method: "post",
+            url: "/api/contact",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            data
+        })
+        return res
+
+    } catch (error) {
+        return error
+    }
+}
 
 
-const Form: FunctionComponent<FormProps> = ({ onContentChange }) => {
+const ContactForm: FunctionComponent = () => {
   const { register, handleSubmit, errors } = useForm<IInputs>();
-  const onSubmit = data => console.log(data);
+  const onSubmit = async (data) => {
+    const res = await sendContactMail(data);
+
+    if (res.status < 300) {
+        console.log('success')
+    } else {
+      console.log('failure')
+    }
+  };
 
   return (
     <Style onSubmit={handleSubmit(onSubmit)}>
       <Top>
-        <ButtonBar symbol='⤂' buttonType='button' onContentChange={onContentChange} />
+        <ButtonBar symbol='⤂' buttonType='button'/>
       </Top>
       <Middle>
         <Fields>
@@ -110,4 +134,4 @@ const Form: FunctionComponent<FormProps> = ({ onContentChange }) => {
   )
 }
 
-export default Form;
+export default ContactForm;
