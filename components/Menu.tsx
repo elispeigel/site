@@ -1,7 +1,5 @@
 import { FunctionComponent } from 'react';
 import styled from 'styled-components';
-import Link from 'next/link';
-
 import { ITheme } from 'styles/theme';
 import NavLink from './NavLink';
 
