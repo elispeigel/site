@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.20.0",
+    "googleapis": "39",
     "next": "9.5.3",
     "nodemailer": "^6.4.11",
     "react": "16.13.1",
