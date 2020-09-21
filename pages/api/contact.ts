@@ -39,7 +39,7 @@
 //     });
 
 
-// export default async (req, res) => {
+export default async (req, res) => {
 
 //     const { email, body } = req.body;
 
@@ -47,4 +47,4 @@
 //     const oAuth2Client = new google.auth.OAuth2(
 //         process.env.CLIENT_ID, process.env.CLIENT_SECRET);
 
-// }
+}
