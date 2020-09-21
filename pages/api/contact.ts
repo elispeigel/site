@@ -1,5 +1,5 @@
-import readline from 'readline'
-import { google } from 'googleapis'
+// import readline from 'readline'
+// import { google } from 'googleapis'
 
 // function authorize(credentials, callback) {
 //     const {client_secret, client_id, redirect_uris} = credentials.installed;
@@ -39,12 +39,12 @@ import { google } from 'googleapis'
 //     });
 
 
-export default async (req, res) => {
+// export default async (req, res) => {
 
-    const { email, body } = req.body;
+//     const { email, body } = req.body;
 
-    //Authorize
-    const oAuth2Client = new google.auth.OAuth2(
-        process.env.CLIENT_ID, process.env.CLIENT_SECRET);
+//     //Authorize
+//     const oAuth2Client = new google.auth.OAuth2(
+//         process.env.CLIENT_ID, process.env.CLIENT_SECRET);
 
-}
+// }
