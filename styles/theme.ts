@@ -22,6 +22,7 @@ interface ISizes {
   smaller: string;
   regular: string;
   large: string;
+  larger: string;
   xlarge: string;
 }
 
@@ -29,10 +30,11 @@ const sizeConstants: ISizes = {
   xxsmall: '.25',
   xsmall: '.5',
   small: '1',
-  smaller: '2',
-  regular: '3',
-  large: '6',
-  xlarge: '9',
+  smaller: '2.4',
+  regular: '3.8',
+  large: '5.2',
+  larger: '6.6',
+  xlarge: '8',
 }
 
 const fontSizesTheme: ISizes = {
@@ -42,6 +44,7 @@ const fontSizesTheme: ISizes = {
   smaller: `clamp(18px, calc(${sizeConstants.smaller}vh + ${sizeConstants.smaller}vw), 36px)`,
   regular: `clamp(24px, calc(${sizeConstants.regular}vh + ${sizeConstants.regular}vw), 48px)`,
   large: `clamp(48px, calc(${sizeConstants.large}vh + ${sizeConstants.large}vw), 96px)`,
+  larger: `clamp(60px, calc(${sizeConstants.larger}vh + ${sizeConstants.larger}vw), 120px)`,
   xlarge: `clamp(72px, calc(${sizeConstants.large}vh + ${sizeConstants.large}vw), 144px)`,
 }
 
@@ -59,6 +62,7 @@ const relationalSizesTheme: IRelationalSizesTheme = {
     smaller: `${sizeConstants.smaller}vh`,
     regular: `${sizeConstants.regular}vh`,
     large: `${sizeConstants.large}vh`,
+    larger: `${sizeConstants.larger}vh`,
     xlarge: `${sizeConstants.xlarge}vh`
   },
   horizontal: {
@@ -68,6 +72,7 @@ const relationalSizesTheme: IRelationalSizesTheme = {
     smaller: `${sizeConstants.smaller}vh`,
     regular: `${sizeConstants.regular}vw`,
     large: `${sizeConstants.large}vw`,
+    larger: `${sizeConstants.larger}vw`,
     xlarge: `${sizeConstants.xlarge}vw`
   },
   regular: {
