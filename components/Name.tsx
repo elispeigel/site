@@ -4,7 +4,7 @@ import { FunctionComponent } from "react";
 import { ITheme } from 'styles/theme'
 
 const Wrapper = styled.div`
-  height: max-content;
+  height: auto;
   display: grid;
   align-items: start;
   justify-items: left;

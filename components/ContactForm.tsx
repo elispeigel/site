@@ -95,13 +95,7 @@ export const sendContactMail = async (data) => {
 const ContactForm: FunctionComponent = () => {
   const { register, handleSubmit, errors } = useForm<IInputs>();
   const onSubmit = async (data) => {
-    const res = await sendContactMail(data);
-
-    if (res.status < 300) {
-        console.log('success')
-    } else {
-      console.log('failure')
-    }
+    console.log(data, 'data')
   };
 
   return (
@@ -128,7 +122,7 @@ const ContactForm: FunctionComponent = () => {
         </Fields>
       </Middle>
       <Bottom>
-        <ButtonBar symbol='⤃' buttonType='submit' />
+        <ButtonBar symbol='✉' buttonType='submit' />
       </Bottom>
     </Style>
   )
