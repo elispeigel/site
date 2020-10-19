@@ -12,8 +12,8 @@ const colorsTheme: IColorsTheme = {
   green: '#1E673C',
   blue: '#2840AF',
   brown: '#482613',
-  red: '#D00000'
-}
+  red: '#D00000',
+};
 
 interface ISizes {
   xxsmall: string;
@@ -35,14 +35,13 @@ const sizeConstants: ISizes = {
   large: '4',
   larger: '5',
   xlarge: '6',
-}
-
+};
 
 interface IRelationalSizesTheme {
-  vertical: ISizes,
-  horizontal: ISizes,
-  combined: ISizes,
-  regular: ISizes
+  vertical: ISizes;
+  horizontal: ISizes;
+  combined: ISizes;
+  regular: ISizes;
 }
 
 const relationalSizesTheme: IRelationalSizesTheme = {
@@ -54,7 +53,7 @@ const relationalSizesTheme: IRelationalSizesTheme = {
     regular: `${sizeConstants.regular}vh`,
     large: `${sizeConstants.large}vh`,
     larger: `${sizeConstants.larger}vh`,
-    xlarge: `${sizeConstants.xlarge}vh`
+    xlarge: `${sizeConstants.xlarge}vh`,
   },
   horizontal: {
     xxsmall: `${sizeConstants.xxsmall}vw`,
@@ -64,7 +63,7 @@ const relationalSizesTheme: IRelationalSizesTheme = {
     regular: `${sizeConstants.regular}vw`,
     large: `${sizeConstants.large}vw`,
     larger: `${sizeConstants.larger}vw`,
-    xlarge: `${sizeConstants.xlarge}vw`
+    xlarge: `${sizeConstants.xlarge}vw`,
   },
   combined: {
     xxsmall: `calc(${sizeConstants.xxsmall}vh + ${sizeConstants.xxsmall}vw)`,
@@ -74,12 +73,12 @@ const relationalSizesTheme: IRelationalSizesTheme = {
     regular: `calc(${sizeConstants.regular}vh + ${sizeConstants.regular}vw)`,
     large: `calc(${sizeConstants.large}vh + ${sizeConstants.large}vw)`,
     larger: `calc(${sizeConstants.larger}vh + ${sizeConstants.larger}vw)`,
-    xlarge: `calc(${sizeConstants.xlarge}vh + ${sizeConstants.xlarge}vw)`
+    xlarge: `calc(${sizeConstants.xlarge}vh + ${sizeConstants.xlarge}vw)`,
   },
   regular: {
-    ...sizeConstants
-  }
-}
+    ...sizeConstants,
+  },
+};
 
 const fontSizesTheme: ISizes = {
   xxsmall: `clamp(3px, ${relationalSizesTheme.combined.xsmall} , 6px)`,
@@ -90,13 +89,13 @@ const fontSizesTheme: ISizes = {
   large: `clamp(48px, ${relationalSizesTheme.combined.large}, 96px)`,
   larger: `clamp(60px, ${relationalSizesTheme.combined.larger}, 120px)`,
   xlarge: `clamp(72px, ${relationalSizesTheme.combined.xlarge}, 144px)`,
-}
+};
 
 export interface ITheme {
-  colors: IColorsTheme,
-  fontSizes: ISizes,
-  relationalSizes: IRelationalSizesTheme,
-  borderRadius: string,
+  colors: IColorsTheme;
+  fontSizes: ISizes;
+  relationalSizes: IRelationalSizesTheme;
+  borderRadius: string;
 }
 
 export interface IThemeWrapper {
@@ -108,4 +107,4 @@ export const theme: ITheme = {
   fontSizes: fontSizesTheme,
   relationalSizes: relationalSizesTheme,
   borderRadius: '30px',
-}
+};

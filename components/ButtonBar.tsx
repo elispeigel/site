@@ -1,15 +1,14 @@
-import React, { FunctionComponent } from "react";
-import styled from "styled-components";
-import {Email} from '@styled-icons/evaicons-solid/Email'
-import {ArrowBack} from '@styled-icons/evaicons-solid/ArrowBack'
+import React, { FunctionComponent } from 'react';
+import styled from 'styled-components';
+import { Email } from '@styled-icons/evaicons-solid/Email';
+import { ArrowBack } from '@styled-icons/evaicons-solid/ArrowBack';
 
-
-import { ITheme, theme as styleTheme} from "styles/theme";
-import NavLink from 'components/NavLink'
+import { ITheme, theme as styleTheme } from 'styles/theme';
+import NavLink from 'components/NavLink';
 
 interface ButtonBarProps {
   symbol: string;
-  buttonType: "button" | "submit" | "reset";
+  buttonType: 'button' | 'submit' | 'reset';
 }
 
 interface StyleProps {
@@ -17,8 +16,8 @@ interface StyleProps {
 }
 
 const Style = styled.div<StyleProps>`
-  padding: ${({ isSubmit }) => isSubmit ? '0 20px 0 0' : '0 0 0 20px'};
-  justify-self: ${({ isSubmit }) => isSubmit ? 'right' : 'left'};
+  padding: ${({ isSubmit }) => (isSubmit ? '0 20px 0 0' : '0 0 0 20px')};
+  justify-self: ${({ isSubmit }) => (isSubmit ? 'right' : 'left')};
 `;
 
 const Button = styled.button`
@@ -28,32 +27,30 @@ const Button = styled.button`
   font: inherit;
   cursor: pointer;
   outline: inherit;
-
-  
 `;
 
 //TODO: DRY this out, some sort of generic
 const StyledEmail = styled(Email)`
-  color: ${({ theme }: { theme: ITheme}) => theme.colors.blue};
+  color: ${({ theme }: { theme: ITheme }) => theme.colors.blue};
   height: max-content;
-  padding-bottom: ${({ theme }: { theme: ITheme}) => theme.relationalSizes.vertical.xsmall};
+  padding-bottom: ${({ theme }: { theme: ITheme }) =>
+    theme.relationalSizes.vertical.xsmall};
 
   :hover {
-    color: ${({ theme }: { theme: ITheme}) => theme.colors.brown};
+    color: ${({ theme }: { theme: ITheme }) => theme.colors.brown};
   }
-
-`
+`;
 
 const StyledBack = styled(ArrowBack)`
-  color: ${({ theme }: { theme: ITheme}) => theme.colors.blue};
+  color: ${({ theme }: { theme: ITheme }) => theme.colors.blue};
   height: max-content;
-  padding-top: ${({ theme }: { theme: ITheme}) => theme.relationalSizes.vertical.xsmall};
+  padding-top: ${({ theme }: { theme: ITheme }) =>
+    theme.relationalSizes.vertical.xsmall};
 
   :hover {
-    color: ${({ theme }: { theme: ITheme}) => theme.colors.brown};
+    color: ${({ theme }: { theme: ITheme }) => theme.colors.brown};
   }
-`
-
+`;
 
 const Link = styled.a`
   text-decoration: none;
@@ -67,29 +64,23 @@ const Link = styled.a`
 
 const isSubmit = (buttonType: string) => buttonType === 'submit';
 
-const ButtonBar: FunctionComponent<ButtonBarProps> = ({ symbol, buttonType }) => (
+const ButtonBar: FunctionComponent<ButtonBarProps> = ({
+  symbol,
+  buttonType,
+}) => (
   <Style isSubmit={isSubmit(buttonType)}>
-    {
-      isSubmit(buttonType) ?
-      (
-        <Button type={buttonType}>
-          <StyledEmail
-            size={styleTheme?.relationalSizes.combined.regular}
-          />
-        </Button>
-      ) :
-      (
-        <NavLink href='/'>
-          <Link>
-            <StyledBack
-              size={styleTheme?.relationalSizes.combined.regular}
-            />
-          </Link>
-        </NavLink>
-      )
-    }
+    {isSubmit(buttonType) ? (
+      <Button type={buttonType}>
+        <StyledEmail size={styleTheme?.relationalSizes.combined.regular} />
+      </Button>
+    ) : (
+      <NavLink href="/">
+        <Link>
+          <StyledBack size={styleTheme?.relationalSizes.combined.regular} />
+        </Link>
+      </NavLink>
+    )}
   </Style>
 );
-
 
 export default ButtonBar;
