@@ -70,8 +70,6 @@ const ContactForm: FunctionComponent = () => {
   const router = useRouter();
 
   const onSubmit = async (data) => {
-    console.log(data, 'data');
-
     sendContactMail({ message: JSON.stringify(data) }, setLoadingStatus, router);
   };
 
