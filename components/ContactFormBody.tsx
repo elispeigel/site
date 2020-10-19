@@ -67,9 +67,7 @@ const RespMessage = styled.div`
   width: fit-content(10vw);
 `;
 
-const Form = () => {
-  const { register, errors } = useForm<IInputs>();
-
+const Form = ({ errors, register }) => {
   return (
     <>
       <Field errors={errors} title="email" value="email">
@@ -103,10 +101,10 @@ const Failure = () => (
   </RespMessage>
 );
 
-const getBody = (loadingStatus: LoadingStatus) => {
+const getBody = (loadingStatus: LoadingStatus, errors, register) => {
   switch (loadingStatus) {
     case LoadingStatus.INITIAL:
-      return <Form />;
+      return <Form errors={errors} register={register}/>;
     case LoadingStatus.SUCCESS:
       return <Success />;
     case LoadingStatus.FAILURE:
@@ -117,9 +115,11 @@ const getBody = (loadingStatus: LoadingStatus) => {
 };
 
 const ContactFormBody: FunctionComponent<ContactFormProps> = ({
+  errors,
   loadingStatus,
+  register
 }) => {
-  return <Style>{getBody(loadingStatus)}</Style>;
+  return <Style>{getBody(loadingStatus, errors, register)}</Style>;
 };
 
 export default ContactFormBody;

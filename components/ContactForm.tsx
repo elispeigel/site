@@ -1,11 +1,13 @@
 import { FunctionComponent, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { DeepMap, FieldError, useForm } from 'react-hook-form';
 import styled from 'styled-components';
 import axios from 'axios';
+import { useRouter } from 'next/router'
 
 import ButtonBar from 'components/ButtonBar';
 import ContactFormBody from 'components/ContactFormBody';
 import ContactFormBottom from 'components/ContactFormBottom';
+import { datacatalog_v1beta1 } from 'googleapis';
 
 export interface IInputs {
   email: string;
@@ -21,6 +23,8 @@ export enum LoadingStatus {
 
 export interface ContactFormProps {
   loadingStatus: LoadingStatus;
+  errors?: DeepMap<IInputs, FieldError>;
+  register?: any;
 }
 
 const Style = styled.form`
@@ -36,22 +40,20 @@ const Top = styled.div`
   grid-row: 1;
 `;
 
-export const sendContactMail = async (data, setLoadingStatus) => {
+export const sendContactMail = async (data, setLoadingStatus, router) => {
   try {
     setLoadingStatus(LoadingStatus.LOADING);
     const res = await axios({
       method: 'post',
-      url: 'https://mailthis.to/eli.speigel@gmail.com',
+      url: 'https://mailthis.to/espeigel',
       headers: {
         'Content-Type': 'application/json',
       },
       data,
     }).then(() => {
       setLoadingStatus(LoadingStatus.SUCCESS);
+      router.push('https://mailthis.to/confirm')
     });
-    // .then(function () {
-    //   window.location.href = 'https://mailthis.to/confirm'
-    // })
   } catch (error) {
     setLoadingStatus(LoadingStatus.FAILURE);
     return error;
@@ -59,14 +61,18 @@ export const sendContactMail = async (data, setLoadingStatus) => {
 };
 
 const ContactForm: FunctionComponent = () => {
-  const { handleSubmit } = useForm<IInputs>();
+  const { errors, handleSubmit, register } = useForm<IInputs>();
+
   const [loadingStatus, setLoadingStatus] = useState<LoadingStatus>(
     LoadingStatus.INITIAL
   );
 
+  const router = useRouter();
+
   const onSubmit = async (data) => {
-    sendContactMail(data, setLoadingStatus);
     console.log(data, 'data');
+
+    sendContactMail({ message: JSON.stringify(data) }, setLoadingStatus, router);
   };
 
   return (
@@ -74,7 +80,7 @@ const ContactForm: FunctionComponent = () => {
       <Top>
         <ButtonBar symbol="⤂" buttonType="button" />
       </Top>
-      <ContactFormBody loadingStatus={loadingStatus} />
+      <ContactFormBody errors={errors} loadingStatus={loadingStatus} register={register} />
       <ContactFormBottom loadingStatus={loadingStatus} />
     </Style>
   );
