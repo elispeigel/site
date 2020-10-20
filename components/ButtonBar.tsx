@@ -7,7 +7,6 @@ import { ITheme, theme as styleTheme } from 'styles/theme';
 import NavLink from 'components/NavLink';
 
 interface ButtonBarProps {
-  symbol: string;
   buttonType: 'button' | 'submit' | 'reset';
 }
 
@@ -64,10 +63,7 @@ const Link = styled.a`
 
 const isSubmit = (buttonType: string) => buttonType === 'submit';
 
-const ButtonBar: FunctionComponent<ButtonBarProps> = ({
-  symbol,
-  buttonType,
-}) => (
+const ButtonBar: FunctionComponent<ButtonBarProps> = ({ buttonType }) => (
   <Style isSubmit={isSubmit(buttonType)}>
     {isSubmit(buttonType) ? (
       <Button type={buttonType}>

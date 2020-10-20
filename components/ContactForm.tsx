@@ -71,9 +71,13 @@ const ContactForm: FunctionComponent = () => {
   return (
     <Style onSubmit={handleSubmit(onSubmit)}>
       <Top>
-        <ButtonBar symbol="⤂" buttonType="button" />
+        <ButtonBar buttonType="button" />
       </Top>
-      <ContactFormBody errors={errors} loadingStatus={loadingStatus} register={register} />
+      <ContactFormBody
+        errors={errors}
+        loadingStatus={loadingStatus}
+        register={register}
+      />
       <ContactFormBottom loadingStatus={loadingStatus} />
     </Style>
   );

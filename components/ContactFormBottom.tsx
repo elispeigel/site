@@ -12,7 +12,7 @@ const Style = styled.div`
 const getBottom = (loadingStatus: LoadingStatus) => {
   switch (loadingStatus) {
     case LoadingStatus.INITIAL:
-      return <ButtonBar symbol="✉" buttonType="submit" />;
+      return <ButtonBar buttonType="submit" />;
     case LoadingStatus.LOADING:
       return null;
     case LoadingStatus.SUCCESS:

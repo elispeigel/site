@@ -6,6 +6,7 @@ interface IColorsTheme {
   brown: string;
   red: string;
 }
+
 const colorsTheme: IColorsTheme = {
   tan: '#DFCDAE',
   black: '#2B2B30',

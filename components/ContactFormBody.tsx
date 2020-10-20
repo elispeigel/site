@@ -2,12 +2,8 @@ import { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import PuffLoader from 'react-spinners/PuffLoader';
 
-
 import Field from 'components/Field';
-import {
-  LoadingStatus,
-  ContactFormProps,
-} from 'components/ContactForm';
+import { LoadingStatus, ContactFormProps } from 'components/ContactForm';
 import { ITheme, theme } from 'styles/theme';
 
 const Style = styled.div`
@@ -50,7 +46,6 @@ const Message = styled.textarea`
   }
 `;
 
-
 const RespMessage = styled.div`
   background: ${({ theme }: { theme: ITheme }) => theme.colors.tan};
   padding-right: ${({ theme }: { theme: ITheme }) =>
@@ -85,11 +80,11 @@ const Form = ({ errors, register }) => {
 };
 
 const Success = () => (
-    <RespMessage>
-      <MessageText>
-        Thank you for reaching out. Your message was successfully sent.
-      </MessageText>
-    </RespMessage>
+  <RespMessage>
+    <MessageText>
+      Thank you for reaching out. Your message was successfully sent.
+    </MessageText>
+  </RespMessage>
 );
 
 const Failure = () => (
@@ -112,7 +107,7 @@ const PuffLoaderWrapper = styled.div`
 
 const StyledPuffLoader = styled(PuffLoader)`
   width: min-content;
-`
+`;
 
 const getBody = (loadingStatus: LoadingStatus, errors, register) => {
   switch (loadingStatus) {
@@ -121,10 +116,7 @@ const getBody = (loadingStatus: LoadingStatus, errors, register) => {
     case LoadingStatus.LOADING:
       return (
         <PuffLoaderWrapper>
-          <StyledPuffLoader
-            color={theme.colors.blue}
-            size='20vh'
-          />
+          <StyledPuffLoader color={theme.colors.blue} size="20vh" />
         </PuffLoaderWrapper>
       );
     case LoadingStatus.SUCCESS:
