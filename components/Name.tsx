@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { FunctionComponent } from "react";
+import styled from 'styled-components';
+import { FunctionComponent } from 'react';
 
-import { ITheme } from 'styles/theme'
+import { ITheme } from 'styles/theme';
 
 const Wrapper = styled.div`
   height: auto;
@@ -18,12 +18,12 @@ const Container = styled.div`
 `;
 
 const Style = styled.div`
-  font: ${({ theme }: { theme: ITheme}) => theme.fontSizes.xlarge} 'Recoleta';
-  color: ${({ theme }: { theme: ITheme}) => theme.colors.blue};
+  font: ${({ theme }: { theme: ITheme }) => theme.fontSizes.xlarge} 'Recoleta';
+  color: ${({ theme }: { theme: ITheme }) => theme.colors.blue};
   margin: 0;
-  padding-left: ${({ theme }: { theme: ITheme}) => theme.relationalSizes.horizontal.regular};
+  padding-left: ${({ theme }: { theme: ITheme }) =>
+    theme.relationalSizes.horizontal.regular};
 `;
-
 
 export default (() => (
   <Wrapper>
