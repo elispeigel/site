@@ -1,7 +1,7 @@
-import { createGlobalStyle } from "styled-components";
-import { ITheme } from "styles/theme";
+import { createGlobalStyle } from 'styled-components';
+import { ITheme } from 'styles/theme';
 
-export default createGlobalStyle<{ theme: ITheme}>`
+export default createGlobalStyle<{ theme: ITheme }>`
 
   @font-face {
     font-family: 'Brandon';
@@ -18,6 +18,6 @@ export default createGlobalStyle<{ theme: ITheme}>`
   html, body {
     height: 100vh;
     margin: 0;
-    background: ${({ theme }: { theme: ITheme}) => theme.colors.tan};
+    background: ${({ theme }: { theme: ITheme }) => theme.colors.tan};
   }
 `;
