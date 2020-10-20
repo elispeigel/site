@@ -41,7 +41,7 @@ const Top = styled.div`
 export const sendContactMail = async (data, setLoadingStatus) => {
   try {
     setLoadingStatus(LoadingStatus.LOADING);
-    const res = await axios({
+    await axios({
       method: 'post',
       url: 'https://mailthis.to/espeigel',
       headers: {
