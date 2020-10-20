@@ -48,13 +48,13 @@ export const sendContactMail = async (data, setLoadingStatus) => {
         'Content-Type': 'application/json',
       },
       data,
-    }).then(() => {
-      setLoadingStatus(LoadingStatus.SUCCESS);
     });
   } catch (error) {
     setLoadingStatus(LoadingStatus.FAILURE);
     return error;
   }
+
+  setLoadingStatus(LoadingStatus.SUCCESS);
 };
 
 const ContactForm: FunctionComponent = () => {

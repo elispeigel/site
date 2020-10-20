@@ -9,25 +9,16 @@ const Style = styled.div`
   grid-row: 3;
 `;
 
-const getBottom = (loadingStatus: LoadingStatus) => {
-  switch (loadingStatus) {
-    case LoadingStatus.INITIAL:
-      return <ButtonBar buttonType="submit" />;
-    case LoadingStatus.LOADING:
-      return null;
-    case LoadingStatus.SUCCESS:
-      return null;
-    case LoadingStatus.FAILURE:
-      return null;
-    default:
-      break;
-  }
-};
-
 const ContactFormBottom: FunctionComponent<ContactFormProps> = ({
   loadingStatus,
 }) => {
-  return <Style>{getBottom(loadingStatus)}</Style>;
+  return (
+    <Style>
+      {loadingStatus === LoadingStatus.INITIAL ? (
+        <ButtonBar buttonType="submit" />
+      ) : null}
+    </Style>
+  );
 };
 
 export default ContactFormBottom;
