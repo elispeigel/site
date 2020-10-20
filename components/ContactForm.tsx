@@ -2,12 +2,10 @@ import { FunctionComponent, useState } from 'react';
 import { DeepMap, FieldError, useForm } from 'react-hook-form';
 import styled from 'styled-components';
 import axios from 'axios';
-import { useRouter } from 'next/router'
 
 import ButtonBar from 'components/ButtonBar';
 import ContactFormBody from 'components/ContactFormBody';
 import ContactFormBottom from 'components/ContactFormBottom';
-import { datacatalog_v1beta1 } from 'googleapis';
 
 export interface IInputs {
   email: string;
@@ -40,7 +38,7 @@ const Top = styled.div`
   grid-row: 1;
 `;
 
-export const sendContactMail = async (data, setLoadingStatus, router) => {
+export const sendContactMail = async (data, setLoadingStatus) => {
   try {
     setLoadingStatus(LoadingStatus.LOADING);
     const res = await axios({
@@ -52,7 +50,6 @@ export const sendContactMail = async (data, setLoadingStatus, router) => {
       data,
     }).then(() => {
       setLoadingStatus(LoadingStatus.SUCCESS);
-      router.push('https://mailthis.to/confirm')
     });
   } catch (error) {
     setLoadingStatus(LoadingStatus.FAILURE);
@@ -67,10 +64,8 @@ const ContactForm: FunctionComponent = () => {
     LoadingStatus.INITIAL
   );
 
-  const router = useRouter();
-
   const onSubmit = async (data) => {
-    sendContactMail({ message: JSON.stringify(data) }, setLoadingStatus, router);
+    sendContactMail({ message: JSON.stringify(data) }, setLoadingStatus);
   };
 
   return (

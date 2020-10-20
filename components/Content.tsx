@@ -14,7 +14,8 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   height: auto;
-  width: auto;
+  // width: max(auto, 100vw);
+  max-width: 100vw;
   display: grid;
   border: ${({ theme }: { theme: ITheme}) => `.25rem solid ${theme.colors.green}`};
   align-items: center;

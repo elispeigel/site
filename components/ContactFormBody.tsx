@@ -1,14 +1,14 @@
 import { FunctionComponent } from 'react';
 import styled from 'styled-components';
-import { useForm } from 'react-hook-form';
+import PuffLoader from 'react-spinners/PuffLoader';
+
 
 import Field from 'components/Field';
 import {
-  IInputs,
   LoadingStatus,
   ContactFormProps,
 } from 'components/ContactForm';
-import { ITheme } from 'styles/theme';
+import { ITheme, theme } from 'styles/theme';
 
 const Style = styled.div`
   grid-column: 2;
@@ -50,21 +50,20 @@ const Message = styled.textarea`
   }
 `;
 
-const RespMessageWrapper = styled.div`
-  display: grid;
-  justify-content: center;
-`;
 
 const RespMessage = styled.div`
   background: ${({ theme }: { theme: ITheme }) => theme.colors.tan};
-  color: ${({ theme }: { theme: ITheme }) => theme.colors.blue};
-  font: ${({ theme }: { theme: ITheme }) => theme.fontSizes.smaller} 'Brandon';
-  overflow-wrap: break-word;
   padding-right: ${({ theme }: { theme: ITheme }) =>
     theme.relationalSizes.horizontal.regular};
   padding-bottom: ${({ theme }: { theme: ITheme }) =>
     theme.relationalSizes.horizontal.regular};
-  width: fit-content(10vw);
+  max-width: 75vw;
+`;
+
+const MessageText = styled.p`
+  color: ${({ theme }: { theme: ITheme }) => theme.colors.blue};
+  font: ${({ theme }: { theme: ITheme }) => theme.fontSizes.smaller} 'Brandon';
+  overflow-wrap: break-word;
 `;
 
 const Form = ({ errors, register }) => {
@@ -86,25 +85,48 @@ const Form = ({ errors, register }) => {
 };
 
 const Success = () => (
-  <RespMessageWrapper>
     <RespMessage>
-      'Thank you for reaching out. Your message was successfully sent.'
+      <MessageText>
+        Thank you for reaching out. Your message was successfully sent.
+      </MessageText>
     </RespMessage>
-  </RespMessageWrapper>
 );
 
 const Failure = () => (
   <RespMessage>
-    'Thank you for reaching out. Unfortunately there was an issue and your
-    message was not successfully sent. Please try again or reach me at
-    eli.speigel@gmail.com'
+    <MessageText>
+      Thank you for reaching out. Unfortunately there was an issue and your
+      message was not successfully sent. Please try again or contact me at
+      eli.speigel@gmail.com.
+    </MessageText>
   </RespMessage>
 );
+
+const PuffLoaderWrapper = styled.div`
+  min-height: 30vh;
+  width: 75vw;
+  display grid;
+  align-items: center;
+  justify-items: center;
+`;
+
+const StyledPuffLoader = styled(PuffLoader)`
+  width: min-content;
+`
 
 const getBody = (loadingStatus: LoadingStatus, errors, register) => {
   switch (loadingStatus) {
     case LoadingStatus.INITIAL:
-      return <Form errors={errors} register={register}/>;
+      return <Form errors={errors} register={register} />;
+    case LoadingStatus.LOADING:
+      return (
+        <PuffLoaderWrapper>
+          <StyledPuffLoader
+            color={theme.colors.blue}
+            size='20vh'
+          />
+        </PuffLoaderWrapper>
+      );
     case LoadingStatus.SUCCESS:
       return <Success />;
     case LoadingStatus.FAILURE:
@@ -117,7 +139,7 @@ const getBody = (loadingStatus: LoadingStatus, errors, register) => {
 const ContactFormBody: FunctionComponent<ContactFormProps> = ({
   errors,
   loadingStatus,
-  register
+  register,
 }) => {
   return <Style>{getBody(loadingStatus, errors, register)}</Style>;
 };

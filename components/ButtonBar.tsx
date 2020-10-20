@@ -71,12 +71,12 @@ const ButtonBar: FunctionComponent<ButtonBarProps> = ({
   <Style isSubmit={isSubmit(buttonType)}>
     {isSubmit(buttonType) ? (
       <Button type={buttonType}>
-        <StyledEmail size={styleTheme?.relationalSizes.combined.regular} />
+        <StyledEmail size={styleTheme?.relationalSizes.combinedCalc.regular} />
       </Button>
     ) : (
       <NavLink href="/">
         <Link>
-          <StyledBack size={styleTheme?.relationalSizes.combined.regular} />
+          <StyledBack size={styleTheme?.relationalSizes.combinedCalc.regular} />
         </Link>
       </NavLink>
     )}

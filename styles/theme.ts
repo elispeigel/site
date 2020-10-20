@@ -41,6 +41,7 @@ interface IRelationalSizesTheme {
   vertical: ISizes;
   horizontal: ISizes;
   combined: ISizes;
+  combinedCalc: ISizes;
   regular: ISizes;
 }
 
@@ -66,6 +67,16 @@ const relationalSizesTheme: IRelationalSizesTheme = {
     xlarge: `${sizeConstants.xlarge}vw`,
   },
   combined: {
+    xxsmall: `${sizeConstants.xxsmall}vh + ${sizeConstants.xxsmall}vw`,
+    xsmall: `${sizeConstants.xsmall}vh + ${sizeConstants.xsmall}vw`,
+    small: `${sizeConstants.small}vh + ${sizeConstants.small}vw`,
+    smaller: `${sizeConstants.smaller}vh + ${sizeConstants.smaller}vw`,
+    regular: `${sizeConstants.regular}vh + ${sizeConstants.regular}vw`,
+    large: `${sizeConstants.large}vh + ${sizeConstants.large}vw`,
+    larger: `${sizeConstants.larger}vh + ${sizeConstants.larger}vw`,
+    xlarge: `${sizeConstants.xlarge}vh + ${sizeConstants.xlarge}vw`,
+  },
+  combinedCalc: {
     xxsmall: `calc(${sizeConstants.xxsmall}vh + ${sizeConstants.xxsmall}vw)`,
     xsmall: `calc(${sizeConstants.xsmall}vh + ${sizeConstants.xsmall}vw)`,
     small: `calc(${sizeConstants.small}vh + ${sizeConstants.small}vw)`,
@@ -81,14 +92,14 @@ const relationalSizesTheme: IRelationalSizesTheme = {
 };
 
 const fontSizesTheme: ISizes = {
-  xxsmall: `clamp(3px, ${relationalSizesTheme.combined.xsmall} , 6px)`,
-  xsmall: `clamp(6px, ${relationalSizesTheme.combined.xsmall}, 12px)`,
-  small: `clamp(12px, ${relationalSizesTheme.combined.small}, 24px)`,
-  smaller: `clamp(18px, ${relationalSizesTheme.combined.smaller}, 36px)`,
-  regular: `clamp(24px, ${relationalSizesTheme.combined.regular}, 48px)`,
-  large: `clamp(48px, ${relationalSizesTheme.combined.large}, 96px)`,
-  larger: `clamp(60px, ${relationalSizesTheme.combined.larger}, 120px)`,
-  xlarge: `clamp(72px, ${relationalSizesTheme.combined.xlarge}, 144px)`,
+  xxsmall: `clamp(3px, ${relationalSizesTheme.combinedCalc.xsmall} , 6px)`,
+  xsmall: `clamp(6px, ${relationalSizesTheme.combinedCalc.xsmall}, 12px)`,
+  small: `clamp(12px, ${relationalSizesTheme.combinedCalc.small}, 24px)`,
+  smaller: `clamp(18px, ${relationalSizesTheme.combinedCalc.smaller}, 36px)`,
+  regular: `clamp(24px, ${relationalSizesTheme.combinedCalc.regular}, 48px)`,
+  large: `clamp(48px, ${relationalSizesTheme.combinedCalc.large}, 96px)`,
+  larger: `clamp(60px, ${relationalSizesTheme.combinedCalc.larger}, 120px)`,
+  xlarge: `clamp(72px, ${relationalSizesTheme.combinedCalc.xlarge}, 144px)`,
 };
 
 export interface ITheme {
