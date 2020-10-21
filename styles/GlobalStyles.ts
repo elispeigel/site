@@ -5,13 +5,13 @@ export default createGlobalStyle<{ theme: ITheme }>`
 
   @font-face {
     font-family: 'Brandon';
-    src: url('/fonts/Brandon_med_it.otf');
+    src: url('/fonts/Brandonmedit.woff2');
     font-display: auto;
   }
 
   @font-face {
     font-family: 'Recoleta';
-    src: url('/fonts/Recoleta-Black.ttf');
+    src: url('/fonts/Recoleta-Black.woff2');
     font-display: auto;
   }
 

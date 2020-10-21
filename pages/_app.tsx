@@ -1,20 +1,34 @@
-import { ThemeProvider } from 'styled-components'
-import Head from 'next/head'
+import { ThemeProvider } from 'styled-components';
+import Head from 'next/head';
+import { motion } from 'framer-motion';
 
-import { theme } from 'styles/theme'
-import Layout from 'components/Layout'
+import { theme } from 'styles/theme';
+import Layout from 'components/Layout';
 
-
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps, router }) {
   return (
     <ThemeProvider theme={theme}>
       <Head>
-          <title>Eli Speigel</title>
-          <link rel="icon" href="images/favicon.ico" />
+        <title>Eli Speigel</title>
+        <link rel="icon" href="images/favicon.ico" />
       </Head>
       <Layout>
-        <Component {...pageProps} />
+        <motion.div
+          key={router.route}
+          initial="pageInitial"
+          animate="pageAnimate"
+          variants={{
+            pageInitial: {
+              opacity: 0,
+            },
+            pageAnimate: {
+              opacity: 1,
+            },
+          }}
+        >
+          <Component {...pageProps} />
+        </motion.div>
       </Layout>
     </ThemeProvider>
-  )
+  );
 }
