@@ -22,7 +22,7 @@ const Style = styled.a`
 `;
 
 const Menu: FunctionComponent = () => (
-  <>
+  <nav>
     <LinkWrapper>
       <Style href="https://github.com/elispeigel">github</Style>
     </LinkWrapper>
@@ -36,7 +36,7 @@ const Menu: FunctionComponent = () => (
         <Style>contact</Style>
       </NavLink>
     </LinkWrapper>
-  </>
+  </nav>
 );
 
 export default Menu;
