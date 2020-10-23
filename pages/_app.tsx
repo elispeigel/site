@@ -11,6 +11,7 @@ export default function App({ Component, pageProps, router }) {
       <Head>
         <title>Eli Speigel</title>
         <link rel="icon" href="images/favicon.ico" />
+        <meta name="Description" content="Personal site of Eli Speigel"></meta>
       </Head>
       <Layout>
         <motion.div
