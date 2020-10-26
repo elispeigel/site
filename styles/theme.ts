@@ -110,15 +110,15 @@ interface IFonts {
 
 const fontsTheme: IFonts = {
   brandon: "'Brandon', 'Helvetica Neue'",
-  recoleta: "'Recoleta'"
-}
+  recoleta: "'Recoleta'",
+};
 
 export interface ITheme {
   colors: IColorsTheme;
   fontSizes: ISizes;
   relationalSizes: IRelationalSizesTheme;
   borderRadius: string;
-  fonts: IFonts
+  fonts: IFonts;
 }
 
 export interface IThemeWrapper {
