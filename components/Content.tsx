@@ -1,7 +1,7 @@
-import { FunctionComponent } from 'react';
-import styled from 'styled-components';
+import { FunctionComponent } from "react";
+import styled from "styled-components";
 
-import { ITheme } from 'styles/theme';
+import { ITheme } from "styles/theme";
 
 const Wrapper = styled.div`
   height: 100%;

@@ -1,10 +1,13 @@
-import { FunctionComponent } from 'react';
-import styled from 'styled-components';
-import PuffLoader from 'react-spinners/PuffLoader';
+import { FunctionComponent } from "react";
+import styled from "styled-components";
+import PuffLoader from "react-spinners/PuffLoader";
 
-import Field from 'components/Field';
-import { LoadingStatus, ContactFormProps } from 'components/ContactForm';
-import { ITheme, theme } from 'styles/theme';
+import Field from "components/contact/Field";
+import {
+  LoadingStatus,
+  ContactFormProps,
+} from "components/contact/ContactForm";
+import { ITheme, theme } from "styles/theme";
 
 const Style = styled.div`
   grid-column: 2;
@@ -17,7 +20,10 @@ const Email = styled.input`
   background: ${({ theme }: { theme: ITheme }) => theme.colors.tan};
   color: ${({ theme }: { theme: ITheme }) => theme.colors.blue};
   border: none;
-  font: ${({ theme }: { theme: ITheme }) => theme.fontSizes.smaller} 'Brandon';
+  font-family: "Brandon", "Helvetica Neue";
+  font-weight: 500;
+  font-style: italic;
+  font-size: ${({ theme }: { theme: ITheme }) => theme.fontSizes.smaller};
   text-decoration: underline
     ${({ theme }: { theme: ITheme }) => theme.colors.green};
   padding: 0;
@@ -37,7 +43,7 @@ const Message = styled.textarea`
   text-decoration: underline
     ${({ theme }: { theme: ITheme }) => theme.colors.green};
   border: none;
-  font: ${({ theme }: { theme: ITheme }) => theme.fontSizes.smaller} 'Brandon';
+  font: ${({ theme }: { theme: ITheme }) => theme.fontSizes.smaller} "Brandon";
   resize: none;
   padding: 0;
 
@@ -57,23 +63,23 @@ const RespMessage = styled.div`
 
 const MessageText = styled.p`
   color: ${({ theme }: { theme: ITheme }) => theme.colors.blue};
-  font: ${({ theme }: { theme: ITheme }) => theme.fontSizes.smaller} 'Brandon';
+  font: ${({ theme }: { theme: ITheme }) => theme.fontSizes.smaller} "Brandon";
   overflow-wrap: break-word;
 `;
 
 const Form = ({ errors, register }) => {
   return (
     <>
-      <Field errors={errors} title="email" value="email">
+      <Field errors={errors} title='email' value='email'>
         <Email
-          name="email"
-          type="email"
-          placeholder=""
+          name='email'
+          type='email'
+          placeholder=''
           ref={register({ required: true })}
         />
       </Field>
-      <Field errors={errors} title="message" value="message">
-        <Message name="message" ref={register({ required: true })} />
+      <Field errors={errors} title='message' value='message'>
+        <Message name='message' ref={register({ required: true })} />
       </Field>
     </>
   );
@@ -116,7 +122,7 @@ const getBody = (loadingStatus: LoadingStatus, errors, register) => {
     case LoadingStatus.LOADING:
       return (
         <PuffLoaderWrapper>
-          <StyledPuffLoader color={theme.colors.blue} size="20vh" />
+          <StyledPuffLoader color={theme.colors.blue} size='20vh' />
         </PuffLoaderWrapper>
       );
     case LoadingStatus.SUCCESS:

@@ -1,13 +1,13 @@
-import React, { FunctionComponent } from 'react';
-import styled from 'styled-components';
-import { Email } from '@styled-icons/evaicons-solid/Email';
-import { ArrowBack } from '@styled-icons/evaicons-solid/ArrowBack';
+import React, { FunctionComponent } from "react";
+import styled from "styled-components";
+import { Email } from "@styled-icons/evaicons-solid/Email";
+import { ArrowBack } from "@styled-icons/evaicons-solid/ArrowBack";
 
-import { ITheme, theme as styleTheme } from 'styles/theme';
-import NavLink from 'components/NavLink';
+import { ITheme, theme as styleTheme } from "styles/theme";
+import NavLink from "components/NavLink";
 
 interface ButtonBarProps {
-  buttonType: 'button' | 'submit' | 'reset';
+  buttonType: "button" | "submit" | "reset";
 }
 
 interface StyleProps {
@@ -15,8 +15,8 @@ interface StyleProps {
 }
 
 const Style = styled.div<StyleProps>`
-  padding: ${({ isSubmit }) => (isSubmit ? '0 20px 0 0' : '0 0 0 20px')};
-  justify-self: ${({ isSubmit }) => (isSubmit ? 'right' : 'left')};
+  padding: ${({ isSubmit }) => (isSubmit ? "0 20px 0 0" : "0 0 0 20px")};
+  justify-self: ${({ isSubmit }) => (isSubmit ? "right" : "left")};
 `;
 
 const Button = styled.button`
@@ -61,7 +61,7 @@ const Link = styled.a`
   outline: inherit;
 `;
 
-const isSubmit = (buttonType: string) => buttonType === 'submit';
+const isSubmit = (buttonType: string) => buttonType === "submit";
 
 const ButtonBar: FunctionComponent<ButtonBarProps> = ({ buttonType }) => (
   <Style isSubmit={isSubmit(buttonType)}>
@@ -70,7 +70,7 @@ const ButtonBar: FunctionComponent<ButtonBarProps> = ({ buttonType }) => (
         <StyledEmail size={styleTheme?.relationalSizes.combinedCalc.regular} />
       </Button>
     ) : (
-      <NavLink href="/">
+      <NavLink href='/'>
         <Link>
           <StyledBack size={styleTheme?.relationalSizes.combinedCalc.regular} />
         </Link>

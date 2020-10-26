@@ -1,7 +1,7 @@
-import { FunctionComponent } from 'react';
-import styled from 'styled-components';
-import { ITheme } from 'styles/theme';
-import NavLink from './NavLink';
+import { FunctionComponent } from "react";
+import styled from "styled-components";
+import { ITheme } from "styles/theme";
+import NavLink from "./NavLink";
 
 const LinkWrapper = styled.div`
   padding-top: ${({ theme }: { theme: ITheme }) =>
@@ -12,27 +12,32 @@ const LinkWrapper = styled.div`
     theme.relationalSizes.horizontal.large};
   padding-right: ${({ theme }: { theme: ITheme }) =>
     theme.relationalSizes.horizontal.large};
+  text-align: center;
 `;
 
 const Style = styled.a`
   color: ${({ theme }: { theme: ITheme }) => theme.colors.blue};
-  font: ${({ theme }: { theme: ITheme }) => theme.fontSizes.regular} 'Brandon';
+  font-family: "Brandon", "Helvetica Neue";
+  font-weight: 500;
+  font-style: italic;
+  font-size ${({ theme }: { theme: ITheme }) => theme.fontSizes.regular};
   text-decoration: none;
   cursor: pointer;
+  width: min-content;
 `;
 
 const Menu: FunctionComponent = () => (
   <nav>
     <LinkWrapper>
-      <Style href="https://github.com/elispeigel">github</Style>
+      <Style href='https://github.com/elispeigel'>github</Style>
     </LinkWrapper>
     <LinkWrapper>
-      <Style href="/resume.pdf" download>
+      <Style href='/resume.pdf' download>
         resume
       </Style>
     </LinkWrapper>
     <LinkWrapper>
-      <NavLink href="/contact">
+      <NavLink href='/contact'>
         <Style>contact</Style>
       </NavLink>
     </LinkWrapper>
