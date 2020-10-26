@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { FunctionComponent } from 'react';
+import styled from "styled-components";
+import { FunctionComponent } from "react";
 
-import { ITheme } from 'styles/theme';
+import { ITheme } from "styles/theme";
 
 const Wrapper = styled.header`
   height: auto;
@@ -24,7 +24,8 @@ const Style = styled.div`
 `;
 
 const Text = styled.h1`
-  font: ${({ theme }: { theme: ITheme }) => theme.fontSizes.xlarge} 'Recoleta';
+  font-family: "Recoleta";
+  font-size: ${({ theme }: { theme: ITheme }) => theme.fontSizes.xlarge};
   color: ${({ theme }: { theme: ITheme }) => theme.colors.blue};
   margin: 0;
 `;

@@ -1,7 +1,7 @@
-import { FunctionComponent } from 'react';
-import styled from 'styled-components';
+import { FunctionComponent } from "react";
+import styled from "styled-components";
 
-import { ITheme } from 'styles/theme';
+import { ITheme } from "styles/theme";
 
 interface FieldProps {
   errors: any;
@@ -24,7 +24,7 @@ const Style = styled.div`
 
 const Label = styled.label`
   color: ${({ theme }: { theme: ITheme }) => theme.colors.brown};
-  font: ${({ theme }: { theme: ITheme }) => theme.fontSizes.smaller} 'Brandon';
+  font: ${({ theme }: { theme: ITheme }) => theme.fontSizes.smaller} "Brandon";
   justify-self: right;
 `;
 
@@ -32,7 +32,7 @@ const Error = styled.span`
   grid-row: 2;
   grid-column: 2;
   color: ${({ theme }: { theme: ITheme }) => theme.colors.red};
-  font: ${({ theme }: { theme: ITheme }) => theme.fontSizes.small} 'Brandon';
+  font: ${({ theme }: { theme: ITheme }) => theme.fontSizes.small} "Brandon";
 `;
 
 const Field: FunctionComponent<FieldProps> = ({

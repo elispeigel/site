@@ -8,12 +8,12 @@ interface IColorsTheme {
 }
 
 const colorsTheme: IColorsTheme = {
-  tan: '#DFCDAE',
-  black: '#2B2B30',
-  green: '#1E673C',
-  blue: '#2840AF',
-  brown: '#482613',
-  red: '#D00000',
+  tan: "#DFCDAE",
+  black: "#2B2B30",
+  green: "#1E673C",
+  blue: "#2840AF",
+  brown: "#482613",
+  red: "#D00000",
 };
 
 interface ISizes {
@@ -28,14 +28,14 @@ interface ISizes {
 }
 
 const sizeConstants: ISizes = {
-  xxsmall: '.25',
-  xsmall: '.5',
-  small: '1',
-  smaller: '2',
-  regular: '3',
-  large: '4',
-  larger: '5',
-  xlarge: '6',
+  xxsmall: ".25",
+  xsmall: ".5",
+  small: "1",
+  smaller: "2",
+  regular: "3",
+  large: "4",
+  larger: "5",
+  xlarge: "6",
 };
 
 interface IRelationalSizesTheme {
@@ -103,11 +103,22 @@ const fontSizesTheme: ISizes = {
   xlarge: `clamp(72px, ${relationalSizesTheme.combinedCalc.xlarge}, 144px)`,
 };
 
+interface IFonts {
+  brandon: string;
+  recoleta: string;
+}
+
+const fontsTheme: IFonts = {
+  brandon: "'Brandon', 'Helvetica Neue'",
+  recoleta: "'Recoleta'"
+}
+
 export interface ITheme {
   colors: IColorsTheme;
   fontSizes: ISizes;
   relationalSizes: IRelationalSizesTheme;
   borderRadius: string;
+  fonts: IFonts
 }
 
 export interface IThemeWrapper {
@@ -116,7 +127,8 @@ export interface IThemeWrapper {
 
 export const theme: ITheme = {
   colors: colorsTheme,
+  fonts: fontsTheme,
   fontSizes: fontSizesTheme,
   relationalSizes: relationalSizesTheme,
-  borderRadius: '30px',
+  borderRadius: "30px",
 };

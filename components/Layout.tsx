@@ -1,10 +1,10 @@
-import React, { FunctionComponent } from 'react';
-import styled from 'styled-components';
+import React, { FunctionComponent } from "react";
+import styled from "styled-components";
 
-import GlobalStyle from 'styles/GlobalStyles';
-import { ITheme, theme } from 'styles/theme';
-import Name from 'components/Name';
-import Content from 'components/Content';
+import GlobalStyle from "styles/GlobalStyles";
+import { ITheme, theme } from "styles/theme";
+import Name from "components/Name";
+import Content from "components/Content";
 
 const Style = styled.div`
   height: 100vh;

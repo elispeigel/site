@@ -1,11 +1,11 @@
-import { FunctionComponent, useState } from 'react';
-import { DeepMap, FieldError, useForm } from 'react-hook-form';
-import styled from 'styled-components';
-import axios from 'axios';
+import { FunctionComponent, useState } from "react";
+import { DeepMap, FieldError, useForm } from "react-hook-form";
+import styled from "styled-components";
+import axios from "axios";
 
-import ButtonBar from 'components/ButtonBar';
-import ContactFormBody from 'components/ContactFormBody';
-import ContactFormBottom from 'components/ContactFormBottom';
+import ButtonBar from "components/contact/ButtonBar";
+import ContactFormBody from "components/contact/ContactFormBody";
+import ContactFormBottom from "components/contact/ContactFormBottom";
 
 export interface IInputs {
   email: string;
@@ -42,10 +42,10 @@ export const sendContactMail = async (data, setLoadingStatus) => {
   try {
     setLoadingStatus(LoadingStatus.LOADING);
     await axios({
-      method: 'post',
-      url: 'https://mailthis.to/espeigel',
+      method: "post",
+      url: "https://mailthis.to/espeigel",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       data,
     });
@@ -71,7 +71,7 @@ const ContactForm: FunctionComponent = () => {
   return (
     <Style onSubmit={handleSubmit(onSubmit)}>
       <Top>
-        <ButtonBar buttonType="button" />
+        <ButtonBar buttonType='button' />
       </Top>
       <ContactFormBody
         errors={errors}
