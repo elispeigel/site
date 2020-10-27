@@ -1,6 +1,16 @@
 # Peronal Site
 
-My personal site built with `Next.js` and `styled-components`. 
+Purpose:
+TODO: what purpose the site serves
+
+Built with:
+TODO: write why each technology was chosen
+`Next.js`: 
+`styled-components`:
+`framer-motion`:
+`mailthis.to`:
+
+
 
 ## Installation
 *Requirements:* `yarn`, 
